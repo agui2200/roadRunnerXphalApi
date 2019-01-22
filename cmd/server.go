@@ -3,7 +3,6 @@ package main
 import (
 	rr "github.com/agui2200/roadrunner/cmd/rr/cmd"
 	"github.com/sirupsen/logrus"
-	"roadRunnerXPhalApi/src/plugins/connProxy"
 
 	// services (plugins)
 	"github.com/agui2200/roadrunner/service/env"
@@ -19,7 +18,6 @@ func main() {
 	rr.Container.Register(rpc.ID, &rpc.Service{})
 	rr.Container.Register(http.ID, &http.Service{})
 	rr.Container.Register(static.ID, &static.Service{})
-	rr.Container.Register(connProxy.ID, &connProxy.Service{})
 
 	rr.Logger.Formatter = &logrus.TextFormatter{ForceColors: true}
 
