@@ -1,7 +1,7 @@
 http:
   address:    0.0.0.0:8081
   workers:
-    command:  "php ../php-src/works/docWork.php"
+    command:  "php ../php-src/works/work.php"
     # connection method (pipes, tcp://:9000, unix://socket.unix). default "pipes"
     relay:    "pipes"
     pool:
