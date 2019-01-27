@@ -28,7 +28,6 @@
  */
 
 require_once dirname(__FILE__) . '/init.php';
-
 $projectName = 'PhalApi开源接口框架';
 
 if (!empty($_GET['detail'])) {
