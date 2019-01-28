@@ -16,7 +16,6 @@ require 'init.php';
 $worker = new RoadRunner\Worker(new Goridge\StreamRelay(STDIN, STDOUT));
 $psr7 = new RoadRunner\PSR7Client($worker);
 
-
 $di = \PhalApi\DI();
 
 while ($req = $psr7->acceptRequest()) {
@@ -36,7 +35,7 @@ while ($req = $psr7->acceptRequest()) {
             case 'docs':
                 $_SERVER['REQUEST_URI'] = '/docs';
                 $_SERVER['SCRIPT_NAME'] = '/index.php';
-                if ($_GET['detail']) {
+                if (isset($_GET['detail']) && $_GET['detail']) {
                     $api = new \PhalApi\Helper\ApiDesc('接口文档');
                     $api->render();
                 } else {
